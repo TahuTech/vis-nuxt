@@ -51,8 +51,8 @@ export default {
     this.$axios
       .get("/api/desa")
       .then(response => {
-        //assign response ke state "kabupaten"
-        this.kabupaten = response.data.data;
+        //assign response ke state "desa"
+        this.desa = response.data.data;
       })
       .catch(error => {
         console.log(error.response.data);

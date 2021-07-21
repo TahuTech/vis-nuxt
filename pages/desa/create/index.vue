@@ -118,16 +118,6 @@ export default {
       .catch(error => {
         console.log(error.response.data);
       });
-
-    this.$axios
-      .get("/api/kabupaten")
-      .then(response => {
-        //assign response ke state "provinsi"
-        this.kabupaten = response.data.data;
-      })
-      .catch(error => {
-        console.log(error.response.data);
-      });
   },
 
   methods: {

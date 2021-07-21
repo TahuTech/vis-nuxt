@@ -18,8 +18,8 @@
                   validation.desa[0]
                 }}</b-alert>
               </div>
+            </b-form-group>
 
-              <b-form @submit="store">
             <b-form-group label="Kabupaten">
               <b-form-select
                 v-model="desa.id_kabupaten"
@@ -32,8 +32,8 @@
                   validation.desa[1]
                 }}</b-alert>
               </div>
-
             </b-form-group>
+
             <b-form-group label="Nama Desa">
               <b-form-input
                 type="text"
@@ -93,9 +93,13 @@ export default {
     return {
       //state post
       provinsi: [],
-      kabupaten: {
+      kabupaten: [],
+      desa: {
         id_provinsi: "",
-        kabupaten: ""
+        id_kabupaten: "",
+        nama_desa: "",
+        alamat_lengkap: "",
+        deskripsi: ""
       },
       //state validation
       validation: [],
@@ -114,6 +118,16 @@ export default {
       .catch(error => {
         console.log(error.response.data);
       });
+
+    this.$axios
+      .get("/api/kabupaten")
+      .then(response => {
+        //assign response ke state "provinsi"
+        this.kabupaten = response.data.data;
+      })
+      .catch(error => {
+        console.log(error.response.data);
+      });
   },
 
   methods: {
@@ -122,15 +136,18 @@ export default {
       e.preventDefault();
       //send data ke Rest API
       await this.$axios
-        .post("/api/kabupaten", {
+        .post("/api/desa", {
           //data yang dikirim ke server
-          id_provinsi: this.kabupaten.id_provinsi,
-          kabupaten: this.kabupaten.kabupaten
+          id_provinsi: this.desa.id_provinsi,
+          id_kabupaten: this.desa.id_kabupaten,
+          nama_desa: this.desa.nama_desa,
+          alamat_lengkap: this.desa.alamat_lengkap,
+          deskripsi: this.desa.deskripsi
         })
         .then(() => {
           //redirect ke route "post"
           this.$router.push({
-            name: "kabupaten"
+            name: "desa"
           });
         })
         .catch(error => {

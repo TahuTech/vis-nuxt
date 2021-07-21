@@ -1,8 +1,13 @@
 <template>
   <div>
-
     <div>
-      <b-navbar toggleable="lg" type="light" variant="light" class="shadow-md" fixed="top">
+      <b-navbar
+        toggleable="lg"
+        type="light"
+        variant="light"
+        class="shadow-md"
+        fixed="top"
+      >
         <b-navbar-brand to="/">NUXT CRUD</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -11,6 +16,7 @@
           <b-navbar-nav>
             <b-nav-item to="/provinsi">Provinsi</b-nav-item>
             <b-nav-item to="/kabupaten">Kabupaten</b-nav-item>
+            <b-nav-item to="/desa">Desa</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -21,10 +27,10 @@
 </template>
 
 <style>
-body{
+body {
   background-color: lightgray;
 }
 .mt-5 {
-  margin-top: 100px!important;
+  margin-top: 100px !important;
 }
 </style>

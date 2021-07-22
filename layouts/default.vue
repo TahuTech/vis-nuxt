@@ -30,6 +30,7 @@
               <b-dropdown-item to="/provinsi">Provinsi</b-dropdown-item>
               <b-dropdown-item to="/kabupaten">Kabupaten</b-dropdown-item>
               <b-dropdown-item to="/kota">Kota</b-dropdown-item>
+              <b-dropdown-item to="/kecamatan">Kecamatan</b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
               <b-dropdown-item>Three</b-dropdown-item>
             </b-nav-item-dropdown>

@@ -94,9 +94,11 @@ export default {
       //state post
       provinsi: [],
       kabupaten: [],
+      kota: [],
       desa: {
         id_provinsi: "",
         id_kabupaten: "",
+        id_kota: "",
         nama_desa: "",
         alamat_lengkap: "",
         deskripsi: ""
@@ -129,7 +131,9 @@ export default {
         .post("/api/desa", {
           //data yang dikirim ke server
           id_provinsi: this.desa.id_provinsi,
+          id_kota: this.desa.id_kota,
           id_kabupaten: this.desa.id_kabupaten,
+          id_kecamatan: this.desa.id_kecamatan,
           nama_desa: this.desa.nama_desa,
           alamat_lengkap: this.desa.alamat_lengkap,
           deskripsi: this.desa.deskripsi

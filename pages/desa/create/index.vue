@@ -34,6 +34,20 @@
               </div>
             </b-form-group>
 
+            <b-form-group label="Kota">
+              <b-form-select
+                v-model="desa.id_kota"
+                :options="kota"
+                value-field="id"
+                text-field="Kota"
+              ></b-form-select>
+              <div v-if="validation.desa" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.desa[2]
+                }}</b-alert>
+              </div>
+            </b-form-group>
+
             <b-form-group label="Nama Desa">
               <b-form-input
                 type="text"

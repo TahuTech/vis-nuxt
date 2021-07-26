@@ -48,6 +48,20 @@
               </div>
             </b-form-group>
 
+            <b-form-group label="Kecamatan">
+              <b-form-select
+                v-model="desa.id_kecamatan"
+                :options="kecamatan"
+                value-field="id"
+                text-field="Kecamatan"
+              ></b-form-select>
+              <div v-if="validation.desa" class="mt-2">
+                <b-alert show variant="danger">{{
+                  validation.desa[3]
+                }}</b-alert>
+              </div>
+            </b-form-group>
+
             <b-form-group label="Nama Desa">
               <b-form-input
                 type="text"
@@ -58,7 +72,7 @@
               </b-form-input>
               <div v-if="validation.kabupaten" class="mt-2">
                 <b-alert show variant="danger">{{
-                  validation.desa[2]
+                  validation.desa[4]
                 }}</b-alert>
               </div>
             </b-form-group>
@@ -73,7 +87,7 @@
               </b-form-input>
               <div v-if="validation.desa" class="mt-2">
                 <b-alert show variant="danger">{{
-                  validation.desa[3]
+                  validation.desa[5]
                 }}</b-alert>
               </div>
             </b-form-group>
@@ -88,7 +102,7 @@
               </b-form-input>
               <div v-if="validation.desa" class="mt-2">
                 <b-alert show variant="danger">{{
-                  validation.desa[4]
+                  validation.desa[6]
                 }}</b-alert>
               </div>
             </b-form-group>
@@ -109,10 +123,12 @@ export default {
       provinsi: [],
       kabupaten: [],
       kota: [],
+      kecamatan: [],
       desa: {
         id_provinsi: "",
         id_kabupaten: "",
         id_kota: "",
+        id_kecamatan: "",
         nama_desa: "",
         alamat_lengkap: "",
         deskripsi: ""

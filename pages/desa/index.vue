@@ -3,7 +3,7 @@
     <b-row>
       <b-col md="12">
         <b-card class="shadow-md border-0 rounded-lg">
-          <h5>Data Desa</h5>
+          <h5>DATA Desa</h5>
           <hr />
           <b-button :to="{ name: 'desa-create' }" variant="primary" class="mb-3"
             >TAMBAH</b-button
